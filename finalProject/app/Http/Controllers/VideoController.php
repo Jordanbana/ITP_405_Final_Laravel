@@ -9,9 +9,9 @@ class VideoController extends Controller
 {
     public function index()
     {
-        $videos = DB::table('songs')
-          ->select('songs.id','artist_name','title','price')
-          ->join('artists', 'songs.artist_id', '=', 'artists.id' )
+        $videos = DB::table('videos')
+          ->select('*')
+          ->orderby('votes','DESC')
           ->get();
         return view('videos.index', [
           'videos' => $videos
