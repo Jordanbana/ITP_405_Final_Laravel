@@ -10,12 +10,19 @@
     <div class="row">
         <div class="col-xs-12">
             <table class="table table-striped">
+              <thead>
+                 <tr>
+                   <th>Video</th>
+                   <th>Number of Up Votes</th>
+                 </tr>
+               </thead>
               <tbody>
                 @foreach ($videos as $video)
                   <tr>
                     <td><iframe width="420" height="236.25" src="{{$video->videoURL}}" frameborder="0" allowfullscreen></iframe></td>
-                    <td> Number of Votes: {{$video->votes}}</td>
+                    <td> Up Votes: {{$video->votes}}</td>
                     <td><a href="" class = "btn btn-primary"> Vote Up </a></td>
+                    <td><a href="" class = "btn btn-primary"> View </a></td>
                   </tr>
                 @endforeach
               </tbody>
