@@ -7,6 +7,8 @@
 
   <body>
 
+    <a href="/videos/new" class="btn"> Add a Video </a>
+
     <div class="row">
         <div class="col-xs-12">
             <table class="table table-striped">
