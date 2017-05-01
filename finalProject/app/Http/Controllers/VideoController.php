@@ -18,6 +18,15 @@ class VideoController extends Controller
         ]); // resources/views/books/index.blade.php
     }
 
+    public function storeComments($videoID)
+    {
+      DB::table('comments')->insert([
+          'user_comment' => request('title'),
+          'user_id' => 1,
+          'video_id' => $videoID
+      ]);
+    }
+
     public function view($videoID)
     {
         // DB::table('videos')->where('id', '=', $videoID)->get();
@@ -51,11 +60,6 @@ class VideoController extends Controller
           'votes' => 'required|numeric'
         ]);
 
-        // $validation = Validator::make($request->all()
-        // ,[
-        //   'videoURL' => 'required',
-        //   'votes' => 'required|numeric'
-        // ]);
 
         if($validation->passes()){
             DB::table('videos')->insert([

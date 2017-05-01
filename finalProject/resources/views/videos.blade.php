@@ -34,6 +34,22 @@
              @endforeach
 
              </table>
+
+             <div class = "container">
+               <h1>Add a comment</h1>
+               <form action="/videos/comments/{{$video->id}}" method="post">
+                 {{ csrf_field() }}
+                 <div class="form-group">
+                   <label for="title">Comment</label>
+                   <!-- <label for="video_number">{{$video->id}}</label> -->
+                   <input type="text" name="title" id="title" class="form-control">
+                 </div>
+                 <button type="submit" class="btn btn-primary">Add!</button>
+               </form>
+              </div>
+
+
+
            </div>
     </div>
   </body>

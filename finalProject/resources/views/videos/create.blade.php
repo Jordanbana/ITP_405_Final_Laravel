@@ -18,7 +18,7 @@
         </div>
       @endif
 
-        <h1>Add a Song</h1>
+        <h1>Add a Video</h1>
         <form action="/videos" method="post">
           {{ csrf_field() }}
           <div class="form-group">
