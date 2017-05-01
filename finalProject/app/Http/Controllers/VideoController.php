@@ -33,16 +33,24 @@ class VideoController extends Controller
           'votes' => 'required|numeric'
         ]);
 
+        // $validation = Validator::make($request->all()
+        // ,[
+        //   'videoURL' => 'required',
+        //   'votes' => 'required|numeric'
+        // ]);
+
         if($validation->passes()){
             DB::table('videos')->insert([
                 'videoURL' => request('title'),
                 'votes' => '1'
             ]);
 
-            return redirect('/videos');
+            return redirect('/videos')
+              ->with('successStatus', 'Video was added successfully!');
         }
         else{
-            return redirect('/videos/new');
+            return redirect('/videos/new')
+              ->withErrors($validation);
         }
 
 
