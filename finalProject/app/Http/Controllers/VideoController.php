@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use DB;
 use App\Videos;
+use Validator;
 
 class VideoController extends Controller
 {
@@ -24,12 +25,27 @@ class VideoController extends Controller
 
     public function store()
     {
-        DB::table('videos')->insert([
+        $validation = Validator::make([
             'videoURL' => request('title'),
             'votes' => '1'
+        ],[
+          'videoURL' => 'required',
+          'votes' => 'required|numeric'
         ]);
 
-        return redirect('/videos');
+        if($validation->passes()){
+            DB::table('videos')->insert([
+                'videoURL' => request('title'),
+                'votes' => '1'
+            ]);
+
+            return redirect('/videos');
+        }
+        else{
+            return redirect('/videos/new');
+        }
+
+
     }
 
 
