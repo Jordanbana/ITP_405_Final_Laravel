@@ -28,6 +28,8 @@ class VideoController extends Controller
           'user_id' => 1,
           'video_id' => $videoID
       ]);
+
+      return redirect("/videos/$videoID");
     }
 
     //Seeing the indivudal video
