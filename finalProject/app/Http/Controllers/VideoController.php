@@ -9,6 +9,8 @@ use Validator;
 
 class VideoController extends Controller
 {
+
+    //Getting all the videos
     public function index()
     {
         //Using Eloquent instead of DB
@@ -18,6 +20,7 @@ class VideoController extends Controller
         ]); // resources/views/books/index.blade.php
     }
 
+    //Adding comments to a video
     public function storeComments($videoID)
     {
       DB::table('comments')->insert([
@@ -27,6 +30,7 @@ class VideoController extends Controller
       ]);
     }
 
+    //Seeing the indivudal video
     public function view($videoID)
     {
         // DB::table('videos')->where('id', '=', $videoID)->get();
@@ -42,14 +46,18 @@ class VideoController extends Controller
           return view("/videos", [
             'videos' => $videos,
             'comments' => $comments
-]);
+          ]);
     }
 
+
+    //Adding Videos
     public function create()
     {
         return view('videos.create');
     }
 
+
+    //Actually storing the video
     public function store()
     {
         $validation = Validator::make([
