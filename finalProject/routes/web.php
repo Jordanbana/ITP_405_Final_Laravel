@@ -9,3 +9,6 @@ Route::get('/videos/new', 'VideoController@create');
 
 //Submitting new Videos
 Route::post('/videos','VideoController@store');
+
+//get single view of videos
+Route::get('/videos/{id}', 'VideoController@view');

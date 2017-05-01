@@ -37,7 +37,7 @@
                       <td> Submitted by: {{$video->userSubmission}}</td>
                       <td> Up Votes: {{$video->votes}}</td>
                       <td><a href="" class = "btn btn-primary"> Vote Up </a></td>
-                      <td><a href="" class = "btn btn-primary"> View </a></td>
+                      <td><a href="/videos/{{ $video->id }}" class = "btn btn-primary"> View </a></td>
 
                     </tr>
                   @endforeach

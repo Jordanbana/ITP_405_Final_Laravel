@@ -18,6 +18,18 @@ class VideoController extends Controller
         ]); // resources/views/books/index.blade.php
     }
 
+    public function view($videoID)
+    {
+        // DB::table('videos')->where('id', '=', $videoID)->get();
+        //return redirect('videos/{{$videoID}}/view');
+        $videos = DB::table('videos')
+          ->where('id', '=', $videoID)
+          ->get();
+          return view("/videos", [
+            'videos' => $videos
+]);
+    }
+
     public function create()
     {
         return view('videos.create');
