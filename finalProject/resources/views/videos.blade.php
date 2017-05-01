@@ -11,7 +11,7 @@
 
 
 
-<!--  Displaying Tweets   ------------->
+<!--  Displaying Videos   ------------->
     <div class="row">
            <div class="col-xs-12">
              <table class="table table-striped">
@@ -25,7 +25,14 @@
                <tr>
                  <td><iframe width="420" height="236.25" src="{{$video->videoURL}}" frameborder="0" allowfullscreen></iframe></td>
                </tr>
+                  @foreach($comments as $comment)
+                    <tr>
+                      <td>{{$comment->user_comment}}</td>
+                    </tr>
+                  @endforeach
+
              @endforeach
+
              </table>
            </div>
     </div>

@@ -25,8 +25,14 @@ class VideoController extends Controller
         $videos = DB::table('videos')
           ->where('id', '=', $videoID)
           ->get();
+
+        $comments = DB::table('comments')
+          ->where('video_id', '=', $videoID)
+          ->get();
+
           return view("/videos", [
-            'videos' => $videos
+            'videos' => $videos,
+            'comments' => $comments
 ]);
     }
 
