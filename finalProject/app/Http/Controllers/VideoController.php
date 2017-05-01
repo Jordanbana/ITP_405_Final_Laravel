@@ -10,7 +10,7 @@ class VideoController extends Controller
 {
     public function index()
     {
-        //Switching to use Eloquent
+        //Using Eloquent instead of DB
         $videos = Videos::all();
         return view('videos.index', [
           'videos' => $videos
@@ -24,6 +24,12 @@ class VideoController extends Controller
 
     public function store()
     {
+        DB::table('videos')->insert([
+            'videoURL' => request('title'),
+            'votes' => '1'
+        ]);
+
+        return redirect('/videos');
     }
 
 

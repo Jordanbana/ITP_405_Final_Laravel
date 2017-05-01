@@ -12,7 +12,7 @@
         <form action="/videos" method="post">
           {{ csrf_field() }}
           <div class="form-group">
-            <label for="videoURL">URL</label>
+            <label for="title">URL</label>
             <input type="text" name="title" id="title" class="form-control">
           </div>
           <button type="submit" class="btn btn-primary">Add!</button>
