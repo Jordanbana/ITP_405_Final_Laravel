@@ -17,7 +17,7 @@ class VideoController extends Controller
         $videos = Videos::all();
         return view('videos.index', [
           'videos' => $videos
-        ]); // resources/views/books/index.blade.php
+        ]); // resources/views/books/index.blade.php 
     }
 
     //Adding comments to a video
