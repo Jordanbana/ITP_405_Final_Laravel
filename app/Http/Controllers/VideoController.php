@@ -51,6 +51,27 @@ class VideoController extends Controller
           ]);
     }
 
+    //Vote up
+    public function voteUp($videoID)
+    {
+      // $videos = DB::table('videos')
+      //   ->where('id', '=', $videoID)
+      //   ->get();
+
+      $vote = DB::table('videos')
+        ->where('id', '=', $videoID)
+        ->get();
+
+      $currVote = $vote[0]->votes;
+
+      DB::table('videos')
+        ->where('id', '=', $videoID)
+        ->update(['votes' => $currVote+1]);
+
+      return redirect("/videos");
+    }
+
+
 
     //Adding Videos
     public function create()

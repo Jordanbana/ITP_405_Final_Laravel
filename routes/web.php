@@ -12,6 +12,9 @@ Route::post('/videos','VideoController@store');
 
 //get single view of videos
 Route::get('/videos/{id}', 'VideoController@view');
+//Vote Up
+Route::get('/videos/voteup/{id}', 'VideoController@voteUp');
+
 
 //Submitting new comments
 Route::post('/videos/comments/{id}','VideoController@storeComments');
