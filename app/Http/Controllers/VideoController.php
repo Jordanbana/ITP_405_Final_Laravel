@@ -54,10 +54,6 @@ class VideoController extends Controller
     //Vote up
     public function voteUp($videoID)
     {
-      // $videos = DB::table('videos')
-      //   ->where('id', '=', $videoID)
-      //   ->get();
-
       $vote = DB::table('videos')
         ->where('id', '=', $videoID)
         ->get();
