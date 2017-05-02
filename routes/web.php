@@ -15,3 +15,11 @@ Route::get('/videos/{id}', 'VideoController@view');
 
 //Submitting new comments
 Route::post('/videos/comments/{id}','VideoController@storeComments');
+
+//Sign up
+Route::get('/signup', 'SignupController@index');
+Route::post('/signup', 'SignupController@signup');
+
+//Login routes
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@login');

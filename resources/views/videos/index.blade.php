@@ -18,6 +18,9 @@
 
 
       <a href="/videos/new" class="btn"> Add a Video </a>
+      <a href="/signup" class="btn"> Sign Up </a>
+      <a href="/login" class="btn"> Login </a>
+
 
 
       <div class="row">
