@@ -14,10 +14,10 @@ class VideoController extends Controller
     public function index()
     {
         //Using Eloquent instead of DB
-        $videos = Videos::all();
+        $videos = Videos::orderBy('votes', 'DESC')->get();
         return view('videos.index', [
           'videos' => $videos
-        ]); // resources/views/books/index.blade.php 
+        ]); // resources/views/books/index.blade.php
     }
 
     //Adding comments to a video
